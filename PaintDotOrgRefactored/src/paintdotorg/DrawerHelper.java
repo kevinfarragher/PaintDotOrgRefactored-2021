@@ -157,10 +157,10 @@ public class DrawerHelper {
 		DrawingArea da=drawingArea;
 		Drawing path=null;
 		if(da.usingEraser==true) {
-			path=new PathDrawing(da.p,da.eraserColor,da.lineThickness);
+			path=new PathDrawing(da.generalPath,da.eraserColor,da.lineThickness);
 		}
 		else if(da.usingPencil==true) {
-			path=new PathDrawing(da.p,da.pointColor,da.lineThickness);
+			path=new PathDrawing(da.generalPath,da.pointColor,da.lineThickness);
 		}
 		da.drawings.add(path);
 	}

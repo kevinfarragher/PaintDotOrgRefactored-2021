@@ -89,7 +89,7 @@ public class DrawingArea extends JPanel implements MouseListener, MouseMotionLis
 
 	//variable used for path drawing
 	//For some reason, without this, the program is laggy when using the pencil or eraser feature
-	public GeneralPath p=new GeneralPath();
+	public GeneralPath generalPath=new GeneralPath();
 
 	/**
 	 * Creates a drawing area, adding its mouse and mouse motion listeners and initializing it. 
@@ -123,7 +123,7 @@ public class DrawingArea extends JPanel implements MouseListener, MouseMotionLis
 		}
 
 		if(usingPencil==true || usingEraser==true) { //without this, the program is laggy when using the pencil or eraser feature for some odd reason
-			g.draw(p);
+			g.draw(generalPath);
 		}
 
 		if(drawingRectangle==true) { //draws a temporary rectangle if the user is currently in the process of drawing a rectangle
@@ -151,7 +151,7 @@ public class DrawingArea extends JPanel implements MouseListener, MouseMotionLis
 		if(usingPencil==true || usingEraser==true){ //when the mouse is clicked and user is drawing with pencil or erasing, a path is drawn
 			drawerHelper.drawPath();
 			setPath(new GeneralPath());
-			p.moveTo(me.getX(), me.getY());
+			generalPath.moveTo(me.getX(), me.getY());
 			repaint();
 		}
 		else if(drawingText==true){ //when the mouse is clicked and user is drawing text, a piece of text is drawn with the current text settings
@@ -180,7 +180,7 @@ public class DrawingArea extends JPanel implements MouseListener, MouseMotionLis
 		dragging=true; 
 
 		if(usingPencil==true || usingEraser==true){ //when the mouse is being dragged and the user is drawing with pencil or erasing, a conneciton (line) is made to each path?
-			p.lineTo(me.getX(), me.getY());
+			generalPath.lineTo(me.getX(), me.getY());
 		}
 		else if(selecting==true) { //when mouse is being dragged and the user is selecting a drawing, the selected drawing is moved
 			select.moveSelectedDrawing(me, this);
@@ -202,7 +202,7 @@ public class DrawingArea extends JPanel implements MouseListener, MouseMotionLis
 		if(usingPencil==true || usingEraser==true){
 			drawerHelper.drawPath();
 			setPath(new GeneralPath());
-			p.moveTo(me.getX(), me.getY());
+			generalPath.moveTo(me.getX(), me.getY());
 		}
 		else if(drawingRectangle==true){ //when the mouse is released and the user is drawing a rectangle, a rectangle is drawn
 			drawerHelper.drawRectangle(false, null);
@@ -333,7 +333,7 @@ public class DrawingArea extends JPanel implements MouseListener, MouseMotionLis
 	 * @param newPath - the new path added when drawing with the pencil or eraser.  
 	 */
 	public void setPath(GeneralPath newPath) {
-		p=newPath;
+		generalPath=newPath;
 	}
 
 }

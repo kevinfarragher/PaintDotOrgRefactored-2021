@@ -76,30 +76,30 @@ public class Driver {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//creates drawing area
-		JPanel drawingArea=new DrawingArea();
+		drawingArea=new DrawingArea();
 		drawingArea.setBounds(10,100,900,410);
 		drawingArea.setBackground(Color.WHITE);
 		
 		//creates background
-		JPanel background=new JPanel();
+		background=new JPanel();
 		background.setBounds(0,0,750,550);
 		background.setBackground(Color.DARK_GRAY);
 		
 		//creates tools area
-		JPanel toolsArea=new JPanel();
-		toolsArea.setBounds(0,0,940,90); 
-		toolsArea.setBackground(Color.LIGHT_GRAY);
+		toolBar=new JPanel();
+		toolBar.setBounds(0,0,940,90); 
+		toolBar.setBackground(Color.LIGHT_GRAY);
 		
 		tools=new Tools(this,frame,drawingArea);
 
 		frame.add(drawingArea);
-		frame.add(toolsArea);
+		frame.add(toolBar);
 		frame.add(background);
 		
 		frame.setVisible(true);
 		frame.setTitle("PaintDotOrg");
 		background.setVisible(true);
-		toolsArea.setVisible(true);
+		toolBar.setVisible(true);
 		drawingArea.setVisible(true);
 	}
 

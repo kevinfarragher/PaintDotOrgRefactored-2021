@@ -13,9 +13,9 @@ import java.awt.image.ImageObserver;
  */
 public class ImageDrawing extends Drawing {
 
-	public BufferedImage image; //image's source
-	public boolean isDraggable; //image's draggable status
-	public DrawingArea drawingArea; //link to the drawing area
+	private BufferedImage image; //image's source
+	private boolean isDraggable; //image's draggable status
+	private DrawingArea drawingArea; //link to the drawing area
 	
 	/**
 	 * Creates an image given its source, coordinates, and its draggable status. 

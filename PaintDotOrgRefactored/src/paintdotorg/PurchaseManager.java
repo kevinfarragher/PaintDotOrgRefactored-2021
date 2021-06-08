@@ -20,8 +20,8 @@ import javax.swing.border.Border;
 public class PurchaseManager {
 	
 	    //store the cost to purchase all features and the number of features still available to purchase
-		public int costToPurchaseAllFeatures=300;
-		public int featuresToPurchase=20;
+		private int costToPurchaseAllFeatures=300;
+		private int featuresToPurchase=20;
 		
 		//Hashmaps to store each feature and their purchase status, cost, and component's border once purchased
 		public HashMap<String, Boolean> featureAndPurchaseStatus = new HashMap<String, Boolean>();

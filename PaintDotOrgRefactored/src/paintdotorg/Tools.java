@@ -81,7 +81,7 @@ public class Tools {
 	/**
 	 * Intitializes the toolbar's components
 	 */
-	public void  initializeToolbarComponents() {
+	public void initializeToolbarComponents() {
 		//Combo box used to open and load recent files
 		openRecentComboBox=new JComboBox();
 		openRecentComboBox.setBounds(89,57,71,21);
@@ -136,7 +136,7 @@ public class Tools {
 						 }
 					 }
 					 ((DrawingArea) drawingArea).userIOActions.open((DrawingArea) drawingArea); //if the open feature is bought, the feature is executed
-					 Path filePath=((DrawingArea) drawingArea).userIOActions.getSavePath();
+					 Path filePath=((DrawingArea) drawingArea).userIOActions.savePath;
 					 openRecentComboBox.addItem(filePath);
 				 } });
 		

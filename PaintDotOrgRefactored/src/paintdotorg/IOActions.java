@@ -21,13 +21,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class IOActions {
 	
 	//variables to store the save path and image to load into the drawing area
-	private Path savePath=null;
+	public Path savePath=null;
 	private File saveFile=null;
 	public BufferedImage loadedImage;
 	private boolean openRecent=false;
-		
-	//boolean to determine whether the image to be loaded into the drawing area is draggable or not
-	public boolean loadedImageDraggable=true; //ADDED
+
+	public boolean loadedImageDraggable=true;  //image to be loaded into the drawing area draggable status
 		
 	private DrawingArea drawingArea; //link to the drawing area
 	
@@ -206,48 +205,4 @@ public class IOActions {
     	drawingArea.drawings.add(image);
       	drawingArea.usingPencil=true;
     }
-	
-    //SETTERS
-    public void setSavePath(Path newSavePath) {
-    	savePath=newSavePath;
-    }
-    
-    public void setSaveFile(File newSaveFile) {
-    	saveFile=newSaveFile;
-    }
-    
-    public void setLoadedImage(BufferedImage newLoadedImage) {
-    	loadedImage=newLoadedImage;
-    }
-    
-    public void setOpenRecent(boolean newOpenRecent) {
-    	openRecent=newOpenRecent;
-    }
-    
-    public void setLoadedImageDraggable(boolean newLoadedImageDraggable) {
-    	loadedImageDraggable=newLoadedImageDraggable;
-    }
-    
-    //GETTERS
-
-	public Path getSavePath() {
-		return savePath;
-	}
-
-	public File getSaveFile() {
-		return saveFile;
-	}
-
-	public BufferedImage getLoadedImage() {
-		return loadedImage;
-	}
-
-	public boolean isOpenRecent() {
-		return openRecent;
-	}
-
-	public boolean isLoadedImageDraggable() {
-		return loadedImageDraggable;
-	}
-    
 }
